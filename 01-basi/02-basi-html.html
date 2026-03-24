@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - Basi 02 - Basi di HTML</title>
+</head>
+<body style="padding-bottom: 100vh;">
+
+    <p>
+        <!-- Il tag STRONG rende porzioni di testo in grassetto e comunica al browser che si tratta di una parte importante del contenuto -->
+        Hello <strong>World</strong>!
+    </p>
+
+    <p>
+        <!-- Il tag EM enfatizza una porzione di testo rendendola "italic" -->
+        La mia prima <em>pagina web</em>
+    </p>
+
+    <!--
+        Abbiamo a disposizione 6 tag per i titoli all'interno del nostro testo. Si chiamano headings e i tag sono: H1, H2, H3, H4, H5, H6.
+
+        Hanno un valore semantico decrescente, quindi il tag H1 di una pagina conterrà il titolo principale del documento e ce ne potrà essere solo uno.
+
+        I contenuti saranno divisi all'interno della pagina e ogni porzione avrà il suo titolo che spiegherà di cosa si parla. Questo titolo sarà contenuto in un H2.
+
+        Se all'interno delle macro-porzioni di contenuto ci sarà bisogno di suddividere ancora, allora potremo utilizzare gli H3 per indicare le varie sotto-porzioni.
+
+        E così via, anche se H4, H5 e H6 non vengono quasi mai utilizzati.
+
+        È IMPORTANTE utilizzare gli Heading secondo il loro valore semantico e non il loro aspetto sulla pagina, per quello sarà il CSS a occuparsene.
+    -->
+
+    <h1>Titolo Principale</h1>
+
+    <h2>Sotto-argomento 1</h2>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tempora nemo quae, odit doloremque nam. Temporibus maiores provident quisquam accusantium animi sunt id perspiciatis, mollitia rem voluptatum impedit dolorem doloribus.
+    </p>
+
+    <h3>Sotto-argomento 1.1</h3>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nulla officiis natus tempore, deleniti, aliquid fugiat ab recusandae iusto optio voluptatibus vel minus corrupti obcaecati saepe itaque veritatis totam ratione!
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam optio ad culpa rem aperiam! Vel facilis possimus debitis odio fugit perspiciatis esse laboriosam voluptatem voluptatum, culpa, illo cumque. Nisi, similique.
+    </p>
+
+    <h3>Sotto-argomento 1.2</h3>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum architecto nam tenetur voluptatem debitis repudiandae, harum repellat omnis. Exercitationem tempora, veniam quisquam accusantium alias quod et dolorem ab dolorum sed.
+    </p>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus aperiam voluptates magni delectus, sit omnis magnam ipsa recusandae rem dolorum fuga, reiciendis aliquam eos porro, hic vero iure architecto.
+    </p>
+
+    <h2>Sotto-argomento 2</h2>
+
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id pariatur, nulla fuga quis velit saepe laboriosam, cupiditate eius sunt laudantium, odit enim non nesciunt recusandae dolor veniam sed ipsam delectus!
+    </p>
+
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <!-- Il tag HR, Horizontal Rule, è un tag autoconclusivo che crea una riga divisoria -->
+    <hr>
+
+    <!--
+        Liste ordinate e non ordinate.
+        È possibile creare delle liste puntate o numerate utilizzando i corretti tag HTML.
+
+        Questi sono UL e OL, rispettivamente Unordered List e Ordered List. Comunicano al browser che ciò che contengono è una lista. Ogni elemento della lista invece viene contenuto all'interno di tag LI, List Item, e gli LI sono gli unici tag accettati come figli diretti di UL e OL.
+    -->
+    <ul>
+        <li>Mario</li>
+        <li>Luigi</li>
+        <li>Yoshi</li>
+    </ul>
+
+    <ol>
+        <li>Peach</li>
+        <li>Toad</li>
+        <li>Bowser</li>
+    </ol>
+
+    <hr>
+
+    <!--
+        Il tag DIV è probabilmente il tag più utilizzato quando si crea una pagina web.
+        Si tratta di un contenitore generico che divide il contenuto in sezioni oppure serve a raggruppare elementi che ha senso accostare tra loro.
+        Viene usato molto molto spesso per creare layout in combinazione con il CSS.
+        Non ha un effetto visivo.
+    -->
+    <div>
+        Sono un tag DIV
+    </div>
+
+    <!--
+        Il tag SPAN è simile a un DIV, ma non si comporta nella stessa maniera.
+        Viene utilizzato per aggiungere CSS o funzioni JS a una porzione di testo o altri elementi.
+    -->
+    <span>Sono un tag SPAN</span>
+    <span>Sono un altro tag SPAN</span>
+
+    <hr>
+
+    <!--
+        Il tag IMG è un tag autoconclusivo che permette di visualizzare un'immagine all'interno della pagina web.
+
+        Per dire al browser che immagine debba essere renderizzata, dobbiamo usare un ATTRIBUTO.
+
+        Gli attributi sono qualcosa che si aggiunge all'interno del tag di apertura, nelle parentesi angolari, per fornire al browser informazioni aggiuntive sull'elemento.
+
+        Assegnando al tag IMG un attributo src (source) possiamo dire al browser dove andare a trovare l'immagine da far vedere sulla pagina. Dobbiamo quindi indicare come valore dell'attributo src il percorso a cui trovare l'immagine.
+
+        È bene utilizzare l'attributo alt (ALTernative text) che fornisce una descrizione testuale dell'immagine. Questa serve in caso in cui l'immagine non possa essere renderizzata e, ancora più importante, a essere riconosciuta da lettori di pagine web per ipovedenti.
+    -->
+    <img src="img/gattino.avif" alt="Gattino tanto pucciosino e carino" width="300">
+
+</body>
+</html>
