@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML & CSS - Basi 02 - Basi di HTML</title>
 </head>
-<body style="padding-bottom: 100vh;">
+<body id="top" style="min-height: 300vh;">
 
     <p>
         <!-- Il tag STRONG rende porzioni di testo in grassetto e comunica al browser che si tratta di una parte importante del contenuto -->
@@ -124,5 +124,50 @@
     -->
     <img src="img/gattino.avif" alt="Gattino tanto pucciosino e carino" width="300">
 
+    <hr>
+
+    <!--
+        Un altro tipo di tag che necessita sempre di attributi è il tag A o Àncora. Questi tag servono a creare link a altre pagine o altri siti.
+
+        Il tag A ha bisogno dell'attributo href (Hyperlink REFerence) il cui valore indica la pagina o il sito a cui il link deve puntare.
+
+        È bene utilizzare anche l'attributo title che riporta un messaggio per l'utente che indica dove si andrà a finire cliccando sul link.
+
+        Infine, se il link punta a un sito esterno, conviene sempre usare l'attributo target con un valore di _blank, in modo da far aprire il sito esterno in una nuova tab del browser. In questo modo non perdiamo l'utente che si trova sul nostro sito.
+    -->
+    <a href="https://www.google.com" title="Link al sito di Google" target="_blank">Vai al sito di Google</a>
+    <br>
+    <a href="01-intro.html" title="Vai alla prima pagina del corso">Torna alla prima pagina del corso</a>
+    <br>
+    <a href="#top" title="Vai a inizio pagina">Torna su</a>
+
+    <!--
+        Anche se sconsigliatissimo, è possibile utilizzare l'attributo style per dare uno stile a un elemento.
+        All'interno di questo attributo si può scrivere in CSS tutte le regole di stile che vogliamo assegnare all'elemento.
+    -->
+    <p style="color: orangered;">
+        Dammi uno stile diverso dagli altri! :)
+    </p>
+
+    <!-- Intestazione della pagina o di una sezione in cima alla pagina -->
+    <header></header>
+
+    <!-- Menù di navigazione -->
+    <nav></nav>
+
+    <!-- Contenuto principale della pagina -->
+    <main></main>
+
+    <!-- Contenuti secondari o correlati (pubblicità, post o prodotti correlati, box laterali...) -->
+    <aside></aside>
+
+    <!-- Contenuto autonomo e riutilizzabile (articolo di blocg, scheda prodotto...) -->
+    <article></article>
+
+    <!-- Raggruppamento tematico di contenuti -->
+    <section></section>
+
+    <!-- Chiusura della pagina -->
+    <footer></footer>
 </body>
 </html>
