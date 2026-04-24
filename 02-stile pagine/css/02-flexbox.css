@@ -1,0 +1,555 @@
+/* RESET MINIMO E BASE */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    background: #f5f7fb;
+    color: #111827;
+    padding-bottom: 100vh;
+}
+
+/* Contenitore centrato per la pagina */
+.container {
+    /* width: 92vw;
+    max-width: 1100px; */
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+}
+
+/* STILE GENERALE: HEADER, SEZIONI, TIPOGRAFIA */
+.site-header {
+    padding: 3.8rem 0 3rem;
+    color: #f9fafb;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #ec4899 100%);
+}
+
+.eyebrow {
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    opacity: 0.85;
+    margin: 0 0 0.5rem;
+}
+
+h1 {
+    /* clamp(dim.Min, dim.Ideale, dim.Max) */
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    margin: 0 0 1rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin: 0 0 0.6rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+.lead {
+    max-width: 55ch;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.section-alt {
+    background: #eef2ff;
+}
+
+.note {
+    background: #f9fafb;
+    padding: 1rem 1.1rem;
+    margin-top: 1.2rem;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: rgba(236, 72, 154, 0.2);
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.35rem;
+    font-size: 0.9rem;
+}
+
+/* Caption sotto le demo */
+.caption {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+}
+
+/* Layout per coppie di demo affiancate */
+.flex-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.3rem;
+}
+
+.flex-block {
+    background: #f9fafb;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 1.2rem;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* Box piccoli per le demo */
+.box {
+    background: #4f46e5;
+    color: #eef2ff;
+    border-radius: 10px;
+    padding: 0.4rem 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 44px;
+}
+
+/* Variante di box più alta */
+.box.tall {
+    padding: 1.4rem;
+}
+
+.tag {
+    background: #4f46e5;
+    color: #eef2ff;
+    border-radius: 999px;
+    padding: .35rem .9rem;
+    font-size: .85rem;
+    /* per non andare a capo all'interno dei tag */
+    white-space: nowrap;
+}
+
+/* DEMO: FLEX E FLEX-DIRECTION */
+
+/* Container flex base (riga) */
+.flex-row-base {
+    /*
+        display: flex trasforma questo elemento in un "flex container"
+
+        CONSEGUENZE"
+        - i suoi figli diretti diventano "flex items"
+        - per default flex-direction è "row"
+        - quindi l'asse principale è orizzontale
+    */
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    /* Aggiungiamo padding e sfondo per vedere il container */
+    background: #e0e7ff;
+    padding: .6rem;
+    border-radius: 12px;
+}
+
+/* Container flex base (colonna) */
+.flex-column-base {
+    /*
+        Cambiando flex-direction in column, l'asse principale diventa verticale.
+
+        Questo significa che:
+        - justify-content lavora dall'alto verso il basso
+        - align-items lavora da sinistra a destra
+    */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    /* Aggiungiamo padding e sfondo per vedere il container */
+    background: #e0e7ff;
+    padding: .6rem;
+    border-radius: 12px;
+}
+
+/* DEMO: JUSTIFY-CONTENT E ALIGN-ITEMS */
+
+/* justify-content */
+.justify-between {
+    /*
+        L'asse principale è orizzontale (flex-direction: row).
+        justify-content decide la distribuzione degli items lungo la riga.
+    */
+    justify-content: space-between;
+}
+
+/* Container più alto per far vedere l'allineamento verticale */
+.flex-row-tall {
+    display: flex;
+    gap: .5rem;
+
+    background: #e0e7ff;
+    padding: .6rem;
+    border-radius: 12px;
+
+    /* Altezza fissa solo per scopo dimostrativo */
+    min-height: 120px;
+}
+
+/* align-items */
+.align-center {
+    /*
+        align-items lavora sul cross axis.
+        Con flex-direction: row, il cross axis è verticale
+    */
+    align-items: center;
+}
+
+/* DEMO: FLEX-WRAP E GAP */
+.flex-wrap-demo {
+    margin-top: 1.3rem;
+}
+
+/* Container flex con wrap e gap */
+.flex-wrap-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+
+    background: #e0e7ff;
+    padding: .6rem;
+    border-radius: 12px;
+}
+
+/* DEMO: FLEX GROW/SHRINK/BASIS (CARDS) */
+
+.cards-flex-row {
+    /*
+        Questo è un esempio tipico di layout con card affiancate.
+
+        display: flex   => le card sono in riga
+        gap             => spazio tra le card
+    */
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Layout responsive per le card: su schermi stretti diventano una colonna */
+@media (max-width: 800px) {
+    .cards-flex-row {
+        flex-direction: column;
+    }
+}
+
+/* Singola card (flex item) */
+.card {
+    background: #f9fafb;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 1.2rem;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+
+    /*
+        Qui usiamo flex: 1;
+        Shorthand di flex-grow, flex-shrink e flex-basis.
+
+        flex: 1;
+        è equivalente a:
+        flex: 1 1 0;
+
+        RISULTATO:
+        - Tutte le card con flex: 1 occupano lo spazio in parti uguali
+        
+        - flex-grow     => Quanta parte dello spazio in più sono disposto a prendermi rispetto agli altri fratelli. Si ragiona in proporzioni e non in pixel.
+        - flex-shrink   => Quanto mi lascio comprimere quando lo spazio non è sufficiente. Anche qui è proporzionale tra gli elementi.
+        - flex-basis    => È la dimensione di base lungo il main axis (larghezza se row, altezza se column). Parte da 0, poi cresce in base allo spazio disponibile.
+
+        Valore di default dei flex items:
+        flex: 0 1 auto;
+        non cresce, può restringersi, dimensione base = auto
+
+        Colonne fluide che si dividono lo spazio in parti uguali
+        flex: 1 1 0;
+        crescono, si restringono, partono tutti da 0 e si dividono lo spazio.
+
+        Elemento fisso, né cresce né si restringe
+        flex: 0 0 200px;
+        sempre 200px (se proprio non ci sta, inizierà a esplodere il layout)
+
+        Elemento che cresce il doppio degli altri
+        flex: 2 1 0;
+        si prende il doppio dello spazio extra rispetto a flex: 1 1 0;
+    */
+    flex: 1;
+}
+
+.flex-gsb-demo {
+    display: flex;
+    gap: .75rem;
+    margin-top: .8rem;
+
+    background: #eff6ff;
+    padding: .9rem;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.box-gsb {
+    background: #4f46e5;
+    color: #eef2ff;
+    border-radius: 10px;
+    padding: .45rem .75rem;
+    font-size: .85rem;
+    text-align: center;
+    white-space: nowrap;
+
+    flex-basis: 120px;
+}
+
+.flex-gsb-grow .box-gsb {
+    flex-shrink: 1;
+}
+
+.flex-gsb-grow .grow-1 {
+    /*
+        Questi elementi:
+        - partono da 120px (basis)
+        - possono restringersi (shrink:1)
+        - crescono con "peso" 1
+    */
+    flex: 1 1 120px;
+}
+
+.flex-gsb-grow .grow-2 {
+    /*
+        Cresce più degli altri a parità di spazio
+    */
+    flex: 2 1 120px;
+}
+
+/* DEMO SHRINK */
+.flex-gsb-shrink .box-gsb {
+    flex-basis: 180px;
+    flex-grow: 0;
+}
+
+.flex-gsb-shrink .shrink-1 {
+    flex-shrink: 1;
+}
+
+.flex-gsb-shrink .shrink-0 {
+    flex-shrink: 0;
+    background: #f97316;
+}
+
+/* DEMO BASIS */
+.flex-gsb-basis .box-gsb {
+    /*
+        Qui usiamo lo stesso grow/shrink per tutti, cambiamo solo la base
+    */
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.flex-gsb-basis .basis-small {
+    flex-basis: 100px;
+}
+
+.flex-gsb-basis .basis-medium {
+    flex-basis: 200px;
+    background: #6366f1;
+}
+
+.flex-gsb-basis .basis-large {
+    flex-basis: 300px;
+    background: #ec4899;
+}
+
+/* ALIGN-SELF E ORDER */
+.flex-self-order-demo {
+    margin-top: 1.5rem;
+}
+
+.flex-self-order {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    background: #e0f2fe;
+    padding: .8rem;
+    border-radius: 12px;
+    min-height: 90px;
+}
+
+.pill {
+    background: #0ea5e9;
+    color: #f0f9ff;
+    border-radius: 999px;
+    padding: .3rem 1rem;
+    font-size: .9rem;
+}
+
+/* Elemento con align-self */
+.pill-special {
+    /*
+        Align-self sovrascrive l'allineamento del singolo elemento rispetto al align-items del contenitore flex.
+        In questo caso il contenitore allinea al centro, ma questo elemento viene allineato in alto (flex-start)
+    */
+    align-self: flex-start;
+    background: #6366f1;
+}
+
+/* Elemento che viene visualizzato per primo grazie a order */
+.pill-reordered {
+    /*
+        Gli elementi flex hanno di default order: 0.
+
+        Un valore più piccolo viene visivamente "prima", un valore più grande "dopo".
+
+        ATTENZIONE:
+        Cambia solo l'ordine visivo, non l'ordine nel DOM (importante per accessibilità e screen reader)
+    */
+    order: -1;
+    background: #f97316;
+}
+
+/* BOTTONI RIUTILIZZABILI */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    font-size: .9rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: #eef2ff;
+    border-color: rgba(78, 70, 229, 0.9);
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #111827;
+    border-color: rgba(148, 163, 184, 0.8);
+}
+
+.btn-ghost:hover {
+    border-color: rgba(148, 163, 184, 0.12);
+}
+
+.btn-ghost.btn-light {
+    color: #e0e7ff;
+}
+
+/* ESEMPIO NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #e5e7eb;
+    background: #111827;
+    margin-top: 1.6rem;
+    padding: .7rem 1rem;
+    border-radius: 999px;
+}
+
+/* Logo */
+.navbar-logo {
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    font-size: .95rem;
+}
+
+/* Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav-links a {
+    color: inherit;
+    text-decoration: none;
+    font-size: .9rem;
+    opacity: .95;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Navbar actions */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.btn-menu,
+.btn-close {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        width: 100%;
+        height: 100vh;
+        background-color: #4338ca;
+
+        transition: all .2s ease;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .btn-menu {
+        display: inline-flex;
+    }
+
+    .btn-close {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+}

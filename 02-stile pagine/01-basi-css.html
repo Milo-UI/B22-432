@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - Lezione base CSS</title>
+
+    <link rel="stylesheet" href="css/01-basi-css.css">
+</head>
+<body>
+
+    <main>
+        <!--
+            L'HTML costruisce la struttura del contenuto.
+            Il CSS invece si occupa dell'aspetto grafico.
+
+            In questa lezione vedremo:
+            1. Come si collega un file CSS a una pagina HTML
+            2. Come si scrive una regola CSS
+            3. Come selezionare gli elementi
+            4. Come cambiare colori, testi, spazi e bordi
+            5. Come creare un semplice blocco / card
+        -->
+
+        <header class="hero">
+            <p class="eyebrow">Lezione introduttiva</p>
+            <h1>Prime basi di CSS</h1>
+            <p class="intro-text">
+                In questa pagina vediamo come il CSS permette di cambiare l'aspetto degli elementi HTML.
+                Useremo esempi molto semplici per capire il funzionamento delle regole CSS.
+            </p>
+        </header>
+
+        <section class="example-section">
+            <h2>1. Selettori base</h2>
+            <p>
+                Il CSS ha bisogno di "agganciare" gli elementi HTML per poterli modificare.
+                Per farlo usa i selettori.
+            </p>
+
+            <div class="demo-box">
+                <h3>Titolo dentro un box</h3>
+                <p>
+                    Questo paragrafo si trova dentro un contenitore con classe <code>demo-box</code>.
+                </p>
+            </div>
+
+            <p id="special-paragraph">
+                Questo paragrafo ha un id specifico e può essere selezionato in modo univoco.
+            </p>
+        </section>
+
+        <section class="example-section">
+            <h2>2. Colori e testo</h2>
+            <p>
+                Con il CSS possiamo cambiare il colore del testo, lo sfondo, la dimensione dei caratteri
+                e anche l'allineamento.
+            </p>
+
+            <p class="text-highlight">
+                Questo testo ha uno stile diverso per attirare l'attenzione.
+            </p>
+
+            <p class="text-center">
+                Questo paragrafo è centrato orizzontalmente.
+            </p>
+        </section>
+
+        <section class="example-section">
+            <h2>3. Margin, padding e border</h2>
+            <p>
+                Una delle cose più importanti da capire in CSS è lo spazio.
+                Alcune proprietà aggiungono spazio interno, altre spazio esterno.
+            </p>
+
+            <div class="spacing-box">
+                Questo elemento ha sfondo, bordo, spazio interno e spazio esterno.
+            </div>
+        </section>
+
+        <section class="example-section">
+            <h2>4. Una semplice card</h2>
+            <p>
+                Qui uniamo più regole CSS per costruire un piccolo blocco grafico.
+                Questo tipo di struttura è molto comune nei siti web.
+            </p>
+
+            <article class="card">
+                <h3>Mario Rossi</h3>
+                <p class="card-role">Studente</p>
+                <p>
+                    Questo è un esempio di card. Con poche proprietà CSS possiamo renderla
+                    più ordinata, leggibile e gradevole da vedere.
+                </p>
+                <a href="#" class="card-button">Scopri di più</a>
+            </article>
+        </section>
+
+        <section class="example-section">
+            <h2>5. Mini esercizio</h2>
+            <p>
+                Prova a modificare da solo alcuni valori nel file CSS:
+            </p>
+
+            <ul>
+                <li>cambia il colore di sfondo della card</li>
+                <li>cambia il colore del pulsante</li>
+                <li>aumenta lo spazio interno della card</li>
+                <li>prova a cambiare la dimensione del titolo principale</li>
+                <li>prova a cambiare il bordo del box con gli spazi</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

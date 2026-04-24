@@ -1,0 +1,306 @@
+/*
+    -------------------------------------------------------------------------
+    LEZIONE BASE DI CSS
+    -------------------------------------------------------------------------
+
+    CSS significa Cascading Style Sheets.
+    Serve a gestire l'aspetto grafico degli elementi HTML.
+
+    -------------------------------------------------------------------------
+    COME SI SCRIVE UNA REGOLA CSS
+    -------------------------------------------------------------------------
+
+    Una regola CSS è fatta così:
+
+    selettore {
+        proprietà: valore;
+    }
+
+    Esempio:
+
+    p {
+        color: blue;
+    }
+
+    In questo caso:
+    - p = selettore
+    - color = proprietà
+    - blue = valore
+
+    Questa regola dice:
+    "tutti i paragrafi devono avere il testo blu"
+
+    -------------------------------------------------------------------------
+    SELETTORI BASE
+    -------------------------------------------------------------------------
+
+    1. Selettore di tag
+       Esempio: p
+       Seleziona tutti gli elementi di quel tipo
+
+    2. Selettore di classe
+       Esempio: .card
+       Seleziona tutti gli elementi che hanno quella classe
+
+    3. Selettore di id
+       Esempio: #special-paragraph
+       Seleziona un elemento specifico con quell'id
+
+    -------------------------------------------------------------------------
+    NOTA IMPORTANTE
+    -------------------------------------------------------------------------
+
+    Il CSS viene letto dall'alto verso il basso.
+    Se più regole agiscono sullo stesso elemento, può prevalere quella più specifica
+    oppure quella scritta dopo.
+*/
+
+/*
+    Browser e pagine HTML hanno degli stili di default.
+    Qui facciamo una piccola normalizzazione di base.
+*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222222;
+    line-height: 1.6;
+}
+
+/*
+    main è il contenitore principale del contenuto.
+    max-width limita la larghezza massima.
+    margin: 0 auto centra il contenitore orizzontalmente.
+    padding aggiunge spazio interno.
+*/
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 1: STILE GENERALE DELLA PARTE INIZIALE
+    -------------------------------------------------------------------------
+*/
+.hero {
+    margin-bottom: 40px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+}
+
+/*
+    .eyebrow è una classe.
+    Il punto davanti al nome indica che stiamo selezionando una classe.
+*/
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0d6efd;
+}
+
+/*
+    h1 è un selettore di tag.
+    Quindi questa regola colpisce tutti gli h1 della pagina.
+*/
+h1 {
+    margin: 0 0 12px;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.intro-text {
+    margin: 0;
+    max-width: 700px;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 2: SEZIONI DELLA PAGINA
+    -------------------------------------------------------------------------
+*/
+.example-section {
+    margin-bottom: 32px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 3: BOX DI DIMOSTRAZIONE
+    -------------------------------------------------------------------------
+
+    Questo blocco ci aiuta a vedere:
+    - background-color = colore di sfondo
+    - padding = spazio interno
+    - border = bordo
+    - margin = spazio esterno
+*/
+.demo-box {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #eef4ff;
+    border: 2px solid #8db4ff;
+    border-radius: 8px;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 4: ID
+    -------------------------------------------------------------------------
+
+    Il cancelletto indica un id.
+    In teoria un id dovrebbe comparire una sola volta nella pagina.
+*/
+#special-paragraph {
+    padding: 12px;
+    background-color: #fff7d6;
+    border-left: 5px solid #e0b100;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 5: TESTO E COLORI
+    -------------------------------------------------------------------------
+*/
+.text-highlight {
+    color: #b42318;
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+    background-color: #f0f8f1;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 6: BOX MODEL
+    -------------------------------------------------------------------------
+
+    BOX MODEL = modo in cui il browser calcola spazio e dimensioni di un elemento.
+
+    In modo semplice possiamo immaginarlo così:
+
+    contenuto -> padding -> bordo -> margin
+
+    - content = contenuto vero e proprio
+    - padding = spazio interno
+    - border = bordo
+    - margin = spazio esterno
+*/
+.spacing-box {
+    margin-top: 24px;
+    padding: 24px;
+    background-color: #e9fff0;
+    border: 3px dashed #2e8b57;
+    border-radius: 10px;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 7: CARD
+    -------------------------------------------------------------------------
+
+    Qui mettiamo insieme più proprietà per costruire un elemento grafico semplice.
+*/
+.card {
+    max-width: 420px;
+    padding: 24px;
+    margin-top: 20px;
+    background-color: #f8f9ff;
+    border: 1px solid #cfd7ff;
+    border-radius: 14px;
+}
+
+.card-role {
+    margin-top: -6px;
+    margin-bottom: 16px;
+    color: #555555;
+    font-weight: bold;
+}
+
+/*
+    Questo link viene trasformato in un piccolo pulsante visivo.
+*/
+.card-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/*
+    :hover cambia l'aspetto quando il mouse passa sopra l'elemento.
+    Non è essenziale per capire le basi, ma è utile come piccolo assaggio.
+*/
+.card-button:hover {
+    background-color: #0b5ed7;
+}
+
+/*
+    -------------------------------------------------------------------------
+    ESEMPIO 8: LISTA FINALE
+    -------------------------------------------------------------------------
+*/
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/*
+    -------------------------------------------------------------------------
+    RIASSUNTO RAPIDO
+    -------------------------------------------------------------------------
+
+    Proprietà utili viste in questa lezione:
+
+    color               cambia il colore del testo
+    background-color    cambia il colore di sfondo
+    font-size           cambia la dimensione del testo
+    text-align          allinea il testo
+    width / max-width   controllano la larghezza
+    margin              spazio esterno
+    padding             spazio interno
+    border              aggiunge un bordo
+    border-radius       arrotonda gli angoli
+
+    -------------------------------------------------------------------------
+    CONSIGLIO PER STUDIARE DA SOLI
+    -------------------------------------------------------------------------
+
+    Il modo migliore per imparare CSS è provare a cambiare i valori.
+
+    Per esempio:
+    - cambia un colore
+    - aumenta un padding
+    - cambia la dimensione del testo
+    - modifica il bordo
+
+    Più fai prove, più il comportamento del CSS diventa chiaro.
+*/
